@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  bungeecord:
+    container_name: "bungeecord"
+    build: ./
+    restart: unless-stopped
+    ports:
+      - "25577:25577/tcp"
+      - "25577:25577/udp"
+    volumes:
+      - "bungeecord_volume:/bungeecord"
+
+volumes:
+  bungeecord_volume:

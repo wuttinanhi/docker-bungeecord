@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Executing: $1"
+echo -n > "/std/bungeecord.stdin"
+sleep 0.1
+echo "$1" > "/std/bungeecord.stdin"

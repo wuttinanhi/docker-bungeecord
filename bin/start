@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BUNGEECORD_PID=0
+
+cd /bungeecord
+
+((java -jar /bungeecord/BungeeCord.jar nogui)< <( tail -n 1 -f -z -q --sleep-interval 0.1 /std/bungeecord.stdin 2>/dev/null )) &
+BUNGEECORD_PID="$!"
+
+echo "BUNGEECORD_PID is ${BUNGEECORD_PID}"
+echo "${BUNGEECORD_PID}" > /bungeecord.pid

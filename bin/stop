@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BUNGEECORD_PID=$(</bungeecord.pid)
+
+echo "Stopping server..."
+/bin/cmd "end"
+
+tail --pid=$BUNGEECORD_PID -f /dev/null
+
+echo "Server stopped."
+exit 0;
